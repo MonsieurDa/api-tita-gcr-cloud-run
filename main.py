@@ -6,6 +6,7 @@ In practice make sure to have them in separate classes.
 """
 from concurrent.futures import thread
 from multiprocessing.managers import ValueProxy
+import os
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from joblib import load
