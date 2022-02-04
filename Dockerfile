@@ -39,4 +39,4 @@ RUN pip install "poetry==$POETRY_VERSION" \
 #or githab ci or travis before creating docker file
 #RUN python -m test 
 #RUN python main.py
-CMD [  "uvicorn","main:app","--reload","--host", "0.0.0.0", "--port", "8000"]
+CMD [ "main.py"]

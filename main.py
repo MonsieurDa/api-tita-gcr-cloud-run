@@ -4,6 +4,7 @@ and the class we use to predict using our trained classifier
 We will put the two into one file to save some time for the exercice.
 In practice make sure to have them in separate classes.
 """
+from concurrent.futures import thread
 from multiprocessing.managers import ValueProxy
 import numpy as np
 from fastapi import FastAPI, HTTPException
@@ -73,3 +74,7 @@ def is_user_item(request: PersonInformation):
         return {"survival_probability": predictor.predict(request)}
     except:
         raise HTTPException(status_code=418, detail="Exceptions can't be handheld by a teapot")
+
+PORT = int(os.environ.get("PORT",8080))
+if __name__ =="__main__":
+    app.run(thread=True, host='0.0.0.0', port=PORT)
