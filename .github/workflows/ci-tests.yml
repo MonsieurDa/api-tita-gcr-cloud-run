@@ -34,7 +34,7 @@ jobs:
         python -m unittest
   
   build-push-gcr:
-    needs: ml-api-to-gcr-cloud-run
+    needs: python-env-test
     name: Build and Push to GCP
     runs-on: ubuntu-latest
 
