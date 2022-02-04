@@ -80,6 +80,12 @@ jobs:
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
+
+    - name: Deploy cloud run
+      uses: 'google-github-actions/deploy-cloudrun@v0'
+      with:
+        image:  gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
+        service: $PROJECT_ID #'hello-cloud-run'
   
     # deploy to cloud run
     #- name: Deploy
