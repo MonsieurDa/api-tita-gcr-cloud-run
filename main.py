@@ -69,7 +69,6 @@ def root(): # = main entrypoint
 
     return {"check the link" : "/docs"}
 
-
 @app.post("/will_survive")
 def is_user_item(request: PersonInformation):
     try:
@@ -78,6 +77,6 @@ def is_user_item(request: PersonInformation):
         raise HTTPException(status_code=418, detail="Exceptions can't be handheld by a teapot")
 
 
-PORT = int(os.environ.get("PORT",8080))
-if __name__ =="__main__":
-    uvicorn.run("main:app")#, host='0.0.0.0', port=PORT)
+#PORT = int(os.environ.get("PORT",8080))
+#if __name__ =="__main__":
+#    uvicorn.run("main:app", host='0.0.0.0', port=PORT)
