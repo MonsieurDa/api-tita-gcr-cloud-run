@@ -3,6 +3,7 @@ An simple example on how to deploy machine learning model api on GCR
 
 # To use this repo we have to :
 * create a gcp project and enable billing
+* Activate containerregistry and artifactregistry api's
 * create a service account (SA) with necessary IAM roles
 * download json of the SA
 * setup github secrets informations 
