@@ -39,5 +39,6 @@ RUN pip install "poetry==$POETRY_VERSION" \
 #or githab ci or travis before creating docker file
 #RUN python -m test 
 #RUN python main.py
-CMD [  "uvicorn","main:app","--reload","--host", "0.0.0.0", "--port", "8000"]
-#CMD [ "main.py" ]
+#CMD [  "uvicorn","main:app","--reload","--host", "0.0.0.0", "--port", "8000"]
+CMD exec gunicorn --bind :$PORT --workers 1 --worker-class uvicorn.workers.UvicornWorker  --threads 8 app.main:app
+
