@@ -35,6 +35,7 @@ jobs:
   
   build-push-gcr:
     name: Build and Push to GCP
+    needs: ml-api-to-gcr-cloud-run
     runs-on: ubuntu-latest
 
     # env variables
@@ -58,7 +59,7 @@ jobs:
     - name: Automatic Tagging of Releases
       id: increment-git-tag
       run: |
-        bash ./git_update.sh -v major
+        bash .github/workflows/get_update.sh -v major
 
     # configure docker to use gcp to auth 
     - name: Configure Docker Client
