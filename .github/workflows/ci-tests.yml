@@ -84,7 +84,7 @@ jobs:
     - name: Deploy cloud run
       uses: 'google-github-actions/deploy-cloudrun@v0'
       with:
-        image:  'gcr.io/$PROJECT_ID/$IMAGE_NAME:latest'
+        image:  'gcr.io/${{ PROJECT_ID }}/${{ IMAGE_NAME }}:latest'
         service: 'hello-cloud-run'
   
     # deploy to cloud run
