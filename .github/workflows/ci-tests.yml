@@ -81,21 +81,20 @@ jobs:
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
 
-    - name: Deploy cloud run
-      uses: 'google-github-actions/deploy-cloudrun@v0'
-      with:
-        image:  'gcr.io/${{ PROJECT_ID }}/${{ IMAGE_NAME }}:latest'
-        service: 'hello-cloud-run'
+    #- name: Deploy cloud run
+    #  uses: 'google-github-actions/deploy-cloudrun@v0'
+    #  with:
+    #    image:  'gcr.io/$PROJECT_ID/$IMAGE_NAME:latest'
+    #    service: 'hello-cloud-run'
   
     # deploy to cloud run
-    #- name: Deploy
-    #  run: |
-    #    gcloud run deploy $IMAGE_NAME \
-    #    --region europe-west1 \
-    #    --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
-    #    --platform managed \
-    #    --allow-unauthenticated \
-    #    --project ${{ env.PROJECT_ID }}
-    #    --set-env-vars NAME="Hello World"
+    - name: Deploy
+      run: |
+        gcloud run deploy image_name \
+        --region europe-west1 \
+        --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
+        --platform managed \
+        --allow-unauthenticated \
+        --project $PROJECT_ID \
     
 
