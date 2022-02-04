@@ -7,6 +7,7 @@ In practice make sure to have them in separate classes.
 from concurrent.futures import thread
 from multiprocessing.managers import ValueProxy
 import os
+import uvicorn
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from joblib import load
@@ -78,4 +79,4 @@ def is_user_item(request: PersonInformation):
 
 PORT = int(os.environ.get("PORT",8080))
 if __name__ =="__main__":
-    app.run(thread=True, host='0.0.0.0', port=PORT)
+    uvicorn.run("main:app", host='0.0.0.0', port=PORT)
