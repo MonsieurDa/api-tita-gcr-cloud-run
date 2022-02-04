@@ -80,4 +80,4 @@ def is_user_item(request: PersonInformation):
 
 PORT = int(os.environ.get("PORT",8080))
 if __name__ =="__main__":
-    uvicorn.run("main:app", host='0.0.0.0', port=PORT)
+    uvicorn.run("main:app")#, host='0.0.0.0', port=PORT)
