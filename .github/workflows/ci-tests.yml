@@ -42,6 +42,7 @@ jobs:
     env:
       IMAGE_NAME: docker-to-gcr-ar
       PROJECT_ID: docker-to-gcr-ar-340310
+      SERVICE_NAME: docker-to-cloudRun-service
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -90,7 +91,7 @@ jobs:
     # deploy to cloud run
     - name: Deploy
       run: |
-        gcloud run deploy $IMAGE_NAME \
+        gcloud run deploy $SERVICE_NAME \
         --region europe-west1 \
         --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
         --platform managed \
