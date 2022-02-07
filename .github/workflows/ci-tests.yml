@@ -85,7 +85,7 @@ jobs:
     # deploy to cloud run
     - name: Deploy
       run: |
-        gcloud run deploy $SERVICE_NAME \
+        gcloud run deploy $IMAGE_NAME \
         --region europe-west1 \
         --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
         --platform managed \
