@@ -90,8 +90,4 @@ jobs:
         --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
         --platform managed \
         --allow-unauthenticated \
-        --project $PROJECT_ID \
-
-    - name: 'Use output'
-      run: 'curl "${{ name.deploy.outputs.url }}"'    
-
+        --project $PROJECT_ID \   
