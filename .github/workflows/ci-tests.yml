@@ -42,7 +42,7 @@ jobs:
     env:
       IMAGE_NAME: docker-to-gcr-ar
       PROJECT_ID: docker-to-gcr-ar-340310
-      SERVICE_NAME: docker-to-cloudRun-service
+      SERVICE_NAME: docker-to-cloudrun-service
     steps:
     - name: Checkout
       uses: actions/checkout@v2
