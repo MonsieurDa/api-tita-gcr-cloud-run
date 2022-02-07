@@ -90,5 +90,3 @@ jobs:
         --image gcr.io/$PROJECT_ID/$IMAGE_NAME:latest \
         --platform managed \
         --allow-unauthenticated \
-        --vpc-connector vpc-conn \
-        --project $PROJECT_ID \
