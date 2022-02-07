@@ -71,7 +71,7 @@ jobs:
         us-west2-docker.pkg.dev
       
     # push to gcr
-    - name: Push Docker Image to Container Registry (GCR)
+    - name: Push Image to GCR
       env:
         #GIT_TAG: v0.1.0
         GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
@@ -83,7 +83,7 @@ jobs:
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
 
     # deploy to cloud run
-    - id: deploy
+    - id: 'deploy'
       run: |
         gcloud run deploy $SERVICE_NAME \
         --region europe-west1 \
@@ -92,6 +92,6 @@ jobs:
         --allow-unauthenticated \
         --project $PROJECT_ID \
 
-    - name: Use output
+    - name: 'Use output'
       run: curl "${{ steps.deploy.outputs.url }}"  
 
