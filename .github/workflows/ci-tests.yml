@@ -93,5 +93,5 @@ jobs:
         --project $PROJECT_ID \
 
     - name: 'Use output'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'    
+      run: curl "${{ steps.deploy.outputs.url }}"   
 
