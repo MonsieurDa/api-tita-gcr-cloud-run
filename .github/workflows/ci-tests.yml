@@ -83,7 +83,7 @@ jobs:
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
 
     # deploy to cloud run
-    - id: 'deploy'
+    - name: Deploy
       run: |
         gcloud run deploy $SERVICE_NAME \
         --region europe-west1 \
