@@ -92,6 +92,6 @@ jobs:
         --allow-unauthenticated \
         --project $PROJECT_ID \
 
-    - name: 'Use output'
-      run: curl ${{ steps.deploy.outputs.url }}  
+    - name: Use output
+      run: curl "${{ steps.deploy.outputs.url }}"  
 
