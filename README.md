@@ -19,7 +19,7 @@ steps :
 * 4 - Unittest python script
 * 5 - and Build and Push docker Image on gcr
 
-###  PS : Once the API deployed on cloud run, you have to allow unauthenticated invocations, add "allUsers" as a principal and assign it the "Cloud Run invoker" role to allow public url access. This can be done in https://console.cloud.google.com/run on permissions window.
+####  PS : Once the API deployed on cloud run, you have to allow unauthenticated invocations, add "allUsers" as a principal and assign it the "Cloud Run invoker" role to allow public url access. This can be done in https://console.cloud.google.com/run on permissions window.
 
 
 
