@@ -1,4 +1,6 @@
 # General
+![api-tita-gcr-cloud-run](https://github.com/MonsieurDa/deploy_gcp_terraform_module/actions/workflows/cloudrun.yml)
+
 An simple example on how to deploy machine learning model api on GCR
 
 # To use this repo we have to :
